@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
 
     # Database
-    database_url: str = "sqlite:///./mvola.db"
+    database_url: str = "postgresql+psycopg2://mvola:mvola@db:5432/mvola"
 
     # Mvola credentials
     mvola_access_token: str = ""

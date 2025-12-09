@@ -22,3 +22,10 @@ uvicorn app.main:app --reload
 docker build -t mvola-service .
 docker run -p 8000:8000 --env-file .env mvola-service
 ```
+
+## Docker Compose (PostgreSQL + API)
+```bash
+cp .env.example .env   # vérifier DATABASE_URL/creds
+docker compose up --build
+# API sur http://localhost:8000, Postgres sur port local 5433
+```
