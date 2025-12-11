@@ -7,7 +7,7 @@ from app.schemas.mvola import (
     MvolaTransactionOut,
     MvolaTransactionUpdate,
 )
-from app.services.mvola import (
+from app.services.mvola_service import (
     create_mv_transaction,
     get_all_transactions_by_user_id,
     get_mv_transaction_details,
