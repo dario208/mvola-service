@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -16,9 +16,12 @@ class Settings(BaseSettings):
     mvola_credit_num: str = ""
     mvola_requesting_org_transaction_reference: str = ""
 
-    class Config:
-        env_prefix = ""
-        env_file = ".env"
+    model_config = SettingsConfigDict(
+        env_prefix="",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",  # ignore env vars that are not explicitly declared
+    )
 
 
 settings = Settings()
